@@ -2,13 +2,24 @@ from astrbot.api.event import filter, AstrMessageEvent, MessageEventResult
 from astrbot.api.star import Context, Star, register
 from astrbot.api import logger
 
-@register("helloworld", "YourName", "一个简单的 Hello World 插件", "1.0.0")
+
+
+# @register("helloworld", "YourName", "一个简单的 Hello World 插件", "1.0.0")
+@register(
+    "astrbot_plugin_obsidian",
+    "OKOKOK-OKOKOK",
+    "自动修改 Obsidian",
+    "0.0.1",
+    "https://github.com/OKOKOK-OKOKOK/astrbot_plugin_obsidian"
+)
 class MyPlugin(Star):
     def __init__(self, context: Context):
         super().__init__(context)
 
     async def initialize(self):
         """可选择实现异步的插件初始化方法，当实例化该插件类之后会自动调用该方法。"""
+
+
 
     # 注册指令的装饰器。指令名为 helloworld。注册成功后，发送 `/helloworld` 就会触发这个指令，并回复 `你好, {user_name}!`
     @filter.command("helloworld")

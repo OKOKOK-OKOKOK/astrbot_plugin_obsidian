@@ -1,3 +1,26 @@
+# 注册插件
+@register(
+    "astrbot_plugin_obsidian",
+    "OKOKOK-OKOKOK",
+    "自动修改 Obsidian 日记",
+    "0.0.1",
+    "https://github.com/OKOKOK-OKOKOK/astrbot_plugin_obsidian"
+)
+
+先把注册命令暂时放这里
+
+
+
+
+
+
+
+
+
+
+---
+# 以下是模板内容
+
 # astrbot-plugin-helloworld
 
 AstrBot 插件模板 / A template plugin for AstrBot plugin feature
