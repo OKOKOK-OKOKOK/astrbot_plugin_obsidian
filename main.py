@@ -22,6 +22,7 @@ class ObsidianPlugin(Star):
 
         # 插件目录
         plugin_dir = os.path.dirname(__file__)
+
         # 测试用硬编码日记路径
         diary_path = os.path.join(plugin_dir, "test_diary.md")
 
