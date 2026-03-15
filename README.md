@@ -12,7 +12,7 @@
 
 这是trae里的项目,先上传git,再在bot更新
 
-
+[2026-03-15 21:27:53.752] [Core] [WARN] [v4.20.0] [routes.plugin:854]: 插件 astrbot_plugin_obsidian 没有更新日志文件
 
 
 

@@ -8,7 +8,7 @@ build_summary_prompt
 build_todo_prompt
 build_search_prompt
 '''
-def build_update_prompt(original: str, instruction: str):
+def build_update_prompt(original: str, instruction: str) -> str:
     '''
     构建更新日记提示
     :param original: 原始日记内容
