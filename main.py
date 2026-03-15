@@ -82,14 +82,16 @@ class ObsidianPlugin(Star):
 
         # 调用 LLM
         try:
-            resp: LLMResponse = await self.context.llm.generate(prompt)
+            provider = self.context.get_using_provider()
+            
+            resp=await provider.text_chat(prompt)
         except Exception as e:
             logger.error(f"LLM调用失败: {e}")
-            await event.reply("LLM 调用失败")
+            yield event.plain_result("LLM 调用失败")
             return
 
         if not resp or not resp.completion_text:
-            await event.reply("LLM 没有返回内容")
+            yield event.plain_result("LLM 没有返回内容")
             return
 
         new_content = resp.completion_text.strip()
@@ -100,9 +102,9 @@ class ObsidianPlugin(Star):
                 f.write(new_content)
         except Exception as e:
             logger.error(f"写入日记失败: {e}")
-            await event.reply("写入日记失败")
+            yield event.plain_result("写入日记失败")
             return
 
         logger.info("[ObsidianPlugin] 日记更新成功")
 
-        await event.reply("测试日记已更新")
+        yield event.plain_result("测试日记已更新")
