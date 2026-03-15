@@ -6,6 +6,12 @@ from astrbot.api import logger
 import os
 
 
+
+'''
+运行会报错
+重载失败: 加载插件「astrbot_plugin_obsidian」(目录: astrbot_plugin_obsidian, 版本: v0.0.1) 
+时出现问题，原因：module 'astrbot.api.event.filter' has no attribute 'on_user_message
+'''
 @register(
     "astrbot_plugin_obsidian",
     "OKOKOK-OKOKOK",
@@ -26,24 +32,22 @@ class ObsidianPlugin(Star):
 
         logger.info(f"[ObsidianPlugin] 日记文件路径: {self.diary_path}")
 
-    @filter.on_user_message()
-    async def on_user_message(self, event: AstrMessageEvent, *args):
+    @filter.event_message_type(filter.EventMessageType.ALL)
+    async def on_message(self, event: AstrMessageEvent):
 
-        user_text = event.message_text.strip()
+        user_text = event.message_str.strip()
 
-        # 只处理指定命令
         if not user_text.startswith("更新测试日记"):
             return
 
-        # 提取冒号后内容
         if ":" not in user_text:
-            await event.reply("命令格式：更新测试日记: 要添加的内容")
+            yield event.plain_result("命令格式：更新测试日记: 内容")
             return
 
         instruction = user_text.split(":", 1)[1].strip()
 
         if not instruction:
-            await event.reply("请输入要添加的内容")
+            yield event.plain_result("请输入内容")
             return
 
         # 读取原始日记
