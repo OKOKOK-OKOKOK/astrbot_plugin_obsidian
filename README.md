@@ -1,29 +1,14 @@
-# 注册插件
-@register(
-    "astrbot_plugin_obsidian",
-    "OKOKOK-OKOKOK",
-    "自动修改 Obsidian 日记",
-    "0.0.1",
-    "https://github.com/OKOKOK-OKOKOK/astrbot_plugin_obsidian"
-)
-
-先把注册命令暂时放这里
-现在文件在forPlugin目录里面,以后迁移到docker目录里面方便管理,
+# 记录
 
 这是trae里的项目,先上传git,再在bot更新
 
 [2026-03-15 21:27:53.752] [Core] [WARN] [v4.20.0] [routes.plugin:854]: 插件 astrbot_plugin_obsidian 没有更新日志文件
 
+没写更新日志文件
 
-
-
-
-
-
-
-
-
-
+基本日记功能实现了,还差
+配置文件读取信息,比如自定义prompt,日记记录的prompt,
+修改prompt,测试时发现ai会多写不相关的东西,比如明明只写了一个人名,llm会开始扩充信息,猜测这个人的信息,
 
 ---
 # 以下是模板内容
