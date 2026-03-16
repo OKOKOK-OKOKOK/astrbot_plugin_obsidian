@@ -96,8 +96,9 @@
         "default": true
       },
       "rewrite_strategy": {
-        "type": "list",
+        "type": "string",
         "description": "控制 AI 修改日记的方式",
+        "hint": "partial 只修改相关段落，full 重写整篇日记",
         "options": [
           "partial",
           "full"
