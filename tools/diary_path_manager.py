@@ -4,7 +4,7 @@ from astrbot.api import logger
 
 class DiaryPathManager:
 
-    def __init__(self, plugin_dir: str, vault_name: str = "test_vault") -> None:
+    def __init__(self, plugin_dir: str, vault_name: str = "Data") -> None:
         self.plugin_dir: str = plugin_dir
         self.vault_name: str = vault_name
         self.vault_path: str = os.path.join(plugin_dir, vault_name)
