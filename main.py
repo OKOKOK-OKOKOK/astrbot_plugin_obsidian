@@ -41,14 +41,14 @@ class ObsidianPlugin(Star):
     async def on_message(self, event: AstrMessageEvent) -> AsyncGenerator[Any, None]:
         user_text: str = (event.message_str or "").strip()
 
-        if not user_text.startswith("日记更新"):
+        if not user_text.startswith("日记，"):
             return
 
         if ":" not in user_text:
-            yield event.plain_result("命令格式：日记更新: 内容")
+            yield event.plain_result("命令格式：日记，内容")
             return
 
-        instruction: str = user_text.split(":", 1)[1].strip()
+        instruction: str = user_text.split("，", 1)[1].strip()
 
         if not instruction:
             yield event.plain_result("请输入修改内容")
