@@ -44,7 +44,7 @@ class ObsidianPlugin(Star):
         if not user_text.startswith("日记，"):
             return
 
-        if ":" not in user_text:
+        if "，" not in user_text:
             yield event.plain_result("命令格式：日记，内容")
             return
 
