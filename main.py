@@ -23,6 +23,8 @@ class ObsidianPlugin(Star):
 
         plugin_dir: str = os.path.dirname(__file__)
 
+        plugin_dir = plugin_dir.replace("plugins", "plugin_data")
+
         self.path_manager: DiaryPathManager = DiaryPathManager(plugin_dir)
 
         diary_path: str = self.path_manager.get_today_diary_path()
