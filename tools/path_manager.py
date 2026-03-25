@@ -28,9 +28,8 @@ class PathManager:
 
         # 插件数据路径存在
         self.plugin_data_path = Path(get_astrbot_plugin_data_path())
-
         # 插件的数据库路径
-        self.vault_path = self.plugin_data_path / self.vault_name
+        self.vault_path = self.plugin_data_path / "astrbot_plugin_obsidian" / self.vault_name
 
         today: datetime.date = datetime.date.today()
         year: int = today.year
@@ -63,9 +62,8 @@ class PathManager:
         
         # 插件数据路径存在
         self.plugin_data_path = Path(get_astrbot_plugin_data_path())
-
         # 插件的数据库路径存在
-        self.vault_path = self.plugin_data_path / self.vault_name
+        self.vault_path = self.plugin_data_path / "astrbot_plugin_obsidian" / self.vault_name
 
         todo_path = os.path.join(
             self.vault_path,
