@@ -1,45 +1,45 @@
 {
   "prompts": {
     "type": "object",
-    "description": "所有日记编辑相关的提示词配置",
+    "description": "所有笔记编辑相关的提示词配置",
     "hint": "配置 AI 的角色和编辑指令",
     "items": {
       "system_prompt": {
         "type": "text",
-        "description": "AI 的系统角色设定，用于控制日记编辑助手的行为。",
-        "default": "你是一名日记编辑助手，根据用户指令修改日记内容。"
+        "description": "AI 的系统角色设定，用于控制笔记编辑助手的行为。",
+        "default": "你是一名笔记编辑助手，根据用户指令修改笔记内容。"
       },
       "rewrite_prompt": {
         "type": "text",
-        "description": "用于指导 AI 如何修改已有日记内容。",
-        "default": "根据用户的修改指令，对日记进行合理修改。"
+        "description": "用于指导 AI 如何修改已有笔记内容。",
+        "default": "根据用户的修改指令，对笔记进行合理修改。"
       },
       "insert_prompt": {
         "type": "text",
-        "description": "用于指导 AI 在日记中插入新的内容。",
-        "default": "根据用户的指令，在日记合适位置插入内容。"
+        "description": "用于指导 AI 在笔记中插入新的内容。",
+        "default": "根据用户的指令，在笔记合适位置插入内容。"
       },
       "summary_prompt": {
         "type": "text",
-        "description": "用于生成当日日记总结。",
-        "default": "总结今天的日记内容。"
+        "description": "用于生成当日笔记总结。",
+        "default": "总结今天的笔记内容。"
       },
       "style_prompt": {
         "type": "text",
-        "description": "用于控制日记的整体写作风格。",
-        "default": "保持日记口语化、自然的表达风格。"
+        "description": "用于控制笔记的整体写作风格。",
+        "default": "进行列点表达以及简化表达，避免口语化和虚构。"
       }
     }
   },
 
   "length_limits": {
     "type": "object",
-    "description": "日记及插入内容的字数限制",
-    "hint": "设置最大/最小字数，控制日记篇幅",
+    "description": "笔记及插入内容的字数限制",
+    "hint": "设置最大/最小字数，控制笔记篇幅",
     "items": {
-      "max_diary_length": {
+      "max_note_length": {
         "type": "int",
-        "description": "限制整篇日记的最大字数",
+        "description": "限制整篇笔记的最大字数",
         "default": 2000
       },
       "max_insert_length": {
@@ -52,14 +52,14 @@
         "description": "限制自动总结的字数",
         "default": 100
       },
-      "min_diary_length": {
+      "min_note_length": {
         "type": "int",
-        "description": "日记生成时的最小字数限制",
+        "description": "笔记生成时的最小字数限制",
         "default": 50
       },
       "max_context_length": {
         "type": "int",
-        "description": "发送给 AI 的日记上下文最大长度",
+        "description": "发送给 AI 的笔记上下文最大长度",
         "default": 1500
       }
     }
@@ -67,38 +67,38 @@
 
   "features": {
     "type": "object",
-    "description": "日记编辑功能开关及策略",
+    "description": "笔记编辑功能开关及策略",
     "hint": "控制允许的操作、自动功能及修改策略",
     "items": {
       "allow_rewrite": {
         "type": "bool",
-        "description": "是否允许 AI 修改已有日记内容",
+        "description": "是否允许 AI 修改已有笔记内容",
         "default": true
       },
       "allow_insert": {
         "type": "bool",
-        "description": "是否允许 AI 在日记中插入新的内容",
+        "description": "是否允许 AI 在笔记中插入新的内容",
         "default": true
       },
       "allow_delete": {
         "type": "bool",
-        "description": "是否允许 AI 删除日记中的部分内容",
+        "description": "是否允许 AI 删除笔记中的部分内容",
         "default": false
       },
       "auto_summary": {
         "type": "bool",
-        "description": "是否在日记末尾自动生成总结",
+        "description": "是否在笔记末尾自动生成总结",
         "default": false
       },
       "auto_time_tag": {
         "type": "bool",
-        "description": "是否自动生成日记时间结构，例如早上 / 中午 / 晚上",
+        "description": "是否自动生成笔记时间结构，例如早上 / 中午 / 晚上",
         "default": true
       },
       "rewrite_strategy": {
         "type": "string",
-        "description": "控制 AI 修改日记的方式",
-        "hint": "partial 只修改相关段落，full 重写整篇日记",
+        "description": "控制 AI 修改笔记的方式",
+        "hint": "partial 只修改相关段落，full 重写整篇笔记", 
         "options": [
           "partial",
           "full"

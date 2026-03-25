@@ -38,10 +38,10 @@ class ConfigValidator:
         :return: (是否有效, 错误信息)
         '''
         required_fields = [
-            "max_diary_length",
+            "max_note_length",
             "max_insert_length",
             "max_summary_length",
-            "min_diary_length",
+            "min_note_length",
             "max_context_length"
         ]
 
@@ -55,15 +55,15 @@ class ConfigValidator:
             if length_limits[field] <= 0:
                 return False, f"长度限制字段 {field} 必须大于 0"
 
-        max_diary_length = length_limits["max_diary_length"]
-        min_diary_length = length_limits["min_diary_length"]
+        max_note_length = length_limits["max_note_length"]
+        min_note_length = length_limits["min_note_length"]
         max_context_length = length_limits["max_context_length"]
 
-        if min_diary_length > max_diary_length:
-            return False, "最小日记长度不能大于最大日记长度"
+        if min_note_length > max_note_length:
+            return False, "最小笔记长度不能大于最大笔记长度"
 
-        if max_context_length > max_diary_length:
-            return False, "最大上下文长度不能大于最大日记长度"
+        if max_context_length > max_note_length:
+            return False, "最大上下文长度不能大于最大笔记长度"
 
         return True, ""
 
