@@ -38,14 +38,14 @@ class CommandService:
         :param content: 要验证的内容
         :return: (是否通过, 错误信息)
         '''
-        max_diary_length = self.length_config["max_diary_length"]
-        min_diary_length = self.length_config["min_diary_length"]
+        max_note_length = self.length_config["max_note_length"]
+        min_note_length = self.length_config["min_note_length"]
 
-        if len(content) > max_diary_length:
-            return False, f"笔记内容超过最大长度限制 ({max_diary_length} 字符)"
+        if len(content) > max_note_length:
+            return False, f"笔记内容超过最大长度限制 ({max_note_length} 字符)"
 
-        if len(content) < min_diary_length:
-            return False, f"笔记内容低于最小长度要求 ({min_diary_length} 字符)"
+        if len(content) < min_note_length:
+            return False, f"笔记内容低于最小长度要求 ({min_note_length} 字符)"
 
         return True, ""
 
